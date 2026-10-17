@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تولدت مبارک کیمیا ❤</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;900&family=Lalezar&family=Lemonada:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    font-family:'Vazirmatn', sans-serif;
+    background:#0a0a0f;
+    color:#fff;
+    overflow-x:hidden;
+  }
+
+  /* ---------- هدر ---------- */
+  .hero {
+    min-height:100vh;
+    display:flex; flex-direction:column;
+    justify-content:center; align-items:center;
+    text-align:center;
+    padding:40px 20px;
+    background:
+      radial-gradient(circle at 20% 30%, rgba(255,110,165,.25), transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(168,107,255,.25), transparent 50%),
+      #0a0a0f;
+  }
+  .hero h1 {
+    font-family:'Lalezar', cursive;
+    font-size:clamp(2.2rem, 8vw, 4.5rem);
+    background:linear-gradient(135deg,#ff9ec4,#c9a7ff,#9ee7ff);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    margin-bottom:18px;
+    line-height:1.4;
+  }
+  .hero p {
+    font-size:clamp(.95rem, 2.5vw, 1.15rem);
+    color:#d8d0e0;
+    max-width:520px;
+    line-height:2;
+  }
+  .hero .badge {
+    display:inline-block;
+    margin-top:28px;
+    padding:10px 26px;
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:50px;
+    font-size:.95rem;
+    color:#ffc6dd;
+    background:rgba(255,255,255,.04);
+  }
+
+  section { padding:90px 22px; }
+
+  .section-title {
+    font-family:'Lalezar', cursive;
+    font-size:clamp(1.7rem, 5vw, 2.6rem);
+    text-align:center;
+    margin-bottom:50px;
+    color:#fff;
+  }
+  .section-title span { color:#ff9ec4; }
+
+  /* ---------- علایق ---------- */
+  .interests { background:#0d0b14; }
+  .cards {
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));
+    gap:22px;
+    max-width:900px;
+    margin:0 auto;
+  }
+  .card {
+    background:#15121e;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:22px;
+    overflow:hidden;
+    transition:transform .3s, box-shadow .3s;
+  }
+  .card:hover {
+    transform:translateY(-8px);
+    box-shadow:0 14px 34px rgba(255,110,165,.18);
+  }
+  .card img {
+    width:100%; height:150px;
+    object-fit:cover;
+    display:block;
+    background:#221d30;
+  }
+  .card .label {
+    padding:14px 12px;
+    text-align:center;
+    font-size:.92rem;
+    color:#e8e2f0;
+    line-height:1.7;
+  }
+
+  /* ---------- تایم‌لاین ---------- */
+  .timeline { background:#0a0a0f; }
+  .tl-wrap {
+    max-width:640px;
+    margin:0 auto;
+    position:relative;
+  }
+  .tl-wrap::before {
+    content:'';
+    position:absolute;
+    right:14px; top:0; bottom:0;
+    width:2px;
+    background:linear-gradient(to bottom,#ff9ec4,#a86bff,#9ee7ff);
+    opacity:.5;
+  }
+  .tl-item {
+    position:relative;
+    padding-right:48px;
+    margin-bottom:36px;
+  }
+  .tl-item:last-child { margin-bottom:0; }
+  .tl-item::before {
+    content:'';
+    position:absolute;
+    right:7px; top:6px;
+    width:16px; height:16px;
+    border-radius:50%;
+    background:#ff9ec4;
+    box-shadow:0 0 0 4px #0a0a0f, 0 0 18px rgba(255,158,196,.7);
+  }
+  .tl-item .date {
+    font-size:.85rem;
+    color:#ff9ec4;
+    margin-bottom:6px;
+    font-weight:700;
+  }
+  .tl-item .title {
+    font-size:1.05rem;
+    color:#fff;
+    line-height:1.8;
+  }
+
+  /* ---------- متن اصلی ---------- */
+  .story {
+    background:
+      radial-gradient(circle at 15% 10%, rgba(168,107,255,.07), transparent 40%),
+      #000;
+    padding:110px 24px;
+  }
+  .story-inner {
+    max-width:720px;
+    margin:0 auto;
+    font-family:'Vazirmatn', sans-serif;
+    font-size:clamp(.98rem, 2.4vw, 1.12rem);
+    line-height:2.4;
+    color:#f2eefa;
+    text-align:justify;
+    text-align-last:center;
+  }
+  .story-inner p { margin-bottom:26px; }
+  .story-inner .signature {
+    font-family:'Lemonada', cursive;
+    font-size:1.15rem;
+    color:#ff9ec4;
+    margin-top:44px;
+    line-height:2.2;
+    text-align:center;
+  }
+
+  /* ---------- دفتر خاطرات ---------- */
+  .diary { background:#0d0b14; }
+  .diary-book {
+    max-width:760px;
+    margin:0 auto;
+    background:
+      repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 38px,
+        rgba(255,255,255,.06) 39px
+      ),
+      #15121e;
+    border-radius:24px;
+    padding:34px 26px;
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 20px 50px rgba(0,0,0,.5);
+  }
+  .diary-item {
+    margin-bottom:26px;
+    padding-bottom:20px;
+    border-bottom:1px dashed rgba(255,255,255,.12);
+  }
+  .diary-item:last-child { border-bottom:none; margin-bottom:0; padding-bottom:0; }
+  .diary-item img {
+    width:100%;
+    border-radius:16px;
+    display:block;
+    margin-bottom:12px;
+    background:#221d30;
+    max-height:420px;
+    object-fit:cover;
+  }
+  .diary-item .cap {
+    font-size:.95rem;
+    color:#d8d0e0;
+    line-height:1.9;
+    text-align:center;
+  }
+
+  /* ---------- سورپرایز ---------- */
+  .surprise { background:#0a0a0f; text-align:center; }
+  .btn {
+    display:inline-block;
+    padding:16px 46px;
+    border:none;
+    border-radius:50px;
+    font-family:inherit;
+    font-size:1.05rem;
+    font-weight:700;
+    color:#fff;
+    cursor:pointer;
+    background:linear-gradient(135deg,#ff6fa5,#a86bff);
+    box-shadow:0 10px 28px rgba(168,107,255,.45);
+    transition:transform .2s, box-shadow .2s;
+  }
+  .btn:hover { transform:scale(1.05); box-shadow:0 14px 36px rgba(255,110,165,.55); }
+  .btn:active { transform:scale(.98); }
+
+  .reasons {
+    max-width:640px;
+    margin:44px auto 0;
+    text-align:right;
+    display:none;
+    background:#15121e;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:24px;
+    padding:30px 26px;
+  }
+  .reasons.open { display:block; animation:fadeIn .6s ease; }
+  .reasons h3 {
+    font-family:'Lalezar', cursive;
+    color:#ff9ec4;
+    font-size:1.4rem;
+    margin-bottom:22px;
+    text-align:center;
+  }
+  .reasons ol { list-style:none; counter-reset:r; }
+  .reasons li {
+    counter-increment:r;
+    position:relative;
+    padding:10px 42px 10px 0;
+    border-bottom:1px dashed rgba(255,255,255,.08);
+    font-size:.98rem;
+    line-height:1.9;
+    color:#efe9f7;
+    opacity:0;
+    transform:translateY(10px);
+    animation:slideUp .45s ease forwards;
+  }
+  .reasons li:last-child { border-bottom:none; }
+  .reasons li::before {
+    content:counter(r);
+    position:absolute;
+    right:0; top:10px;
+    width:28px; height:28px;
+    border-radius:50%;
+    background:rgba(255,158,196,.15);
+    color:#ff9ec4;
+    font-size:.8rem;
+    font-weight:700;
+    display:flex; align-items:center; justify-content:center;
+  }
+  @keyframes slideUp { to { opacity:1; transform:translateY(0); } }
+  @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+  /* ---------- موسیقی ---------- */
+  .music-btn {
+    position:fixed;
+    bottom:22px; left:22px;
+    z-index:100;
+    width:56px; height:56px;
+    border-radius:50%;
+    border:none;
+    cursor:pointer;
+    background:linear-gradient(135deg,#ff6fa5,#a86bff);
+    color:#fff;
+    font-size:1.4rem;
+    box-shadow:0 8px 24px rgba(168,107,255,.5);
+    display:flex; align-items:center; justify-content:center;
+    transition:transform .2s;
+  }
+  .music-btn:hover { transform:scale(1.1); }
+  .music-btn.playing { animation:pulse 1.6s infinite; }
+  @keyframes pulse {
+    0%,100% { box-shadow:0 8px 24px rgba(168,107,255,.5); }
+    50% { box-shadow:0 8px 34px rgba(255,110,165,.85); }
+  }
+
+  /* ---------- کانفتی ---------- */
+  .confetti {
+    position:fixed; top:-12px;
+    width:10px; height:10px;
+    z-index:999; pointer-events:none;
+    border-radius:2px;
+    animation:fall linear forwards;
+  }
+  @keyframes fall {
+    to { transform:translateY(105vh) rotate(720deg); opacity:0; }
+  }
+
+  footer {
+    text-align:center;
+    padding:40px 20px;
+    font-size:.85rem;
+    color:#6f687d;
+    background:#0a0a0f;
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= ۱. هدر ================= -->
+<section class="hero">
+  <h1>تولدت مبارک کیمیای عزیزتر از جانم </h1>
+  <p>امروز روز توئه؛ روزی که دنیا یه ستاره‌ی تازه گرفت. این صفحه رو ساختم تا از راه دور، با تمام قلبم، بهت بگم چقدر برام خاصی.</p>
+  <div class="badge">✨ بیست سالگی‌ات مبارک ✨</div>
+</section>
+
+<!-- ================= ۲. علایق کیمیا ================= -->
+<section class="interests">
+  <h2 class="section-title">چیزهایی که <span>دوست داری</span> 💖</h2>
+  <div class="cards" id="interestCards"></div>
+</section>
+
+<!-- ================= ۳. تایم‌لاین ================= -->
+<section class="timeline">
+  <h2 class="section-title">مسیر <span>ما</span> 🗓️</h2>
+  <div class="tl-wrap">
+    <div class="tl-item">
+      <div class="date">شهریور ۱۳۸۵</div>
+      <div class="title">تولد من</div>
+    </div>
+    <div class="tl-item">
+      <div class="date">مهر ۱۳۸۵</div>
+      <div class="title">تولد تو</div>
+    </div>
+    <div class="tl-item">
+      <div class="date">تیر ۱۳۹۸</div>
+      <div class="title">اعتراف به عشق همدیگه</div>
+    </div>
+    <div class="tl-item">
+      <div class="date">فروردین ۱۴۰۱</div>
+      <div class="title">دوری موقت از هم</div>
+    </div>
+    <div class="tl-item">
+      <div class="date">شهریور ۱۴۰۳</div>
+      <div class="title">رهایی از همه چی و شروع دوباره رابطه</div>
+    </div>
+    <div class="tl-item">
+      <div class="date">مهر ۱۴۰۵</div>
+      <div class="title">تولد ۲۰ سالگی تو 💫</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ۴. متن اصلی ================= -->
+<section class="story">
+  <div class="story-inner">
+    <p>یادته روزی که تو اتاقی که پارچه‌ها رو می‌ذاشتن بودیم و به هم گفتیم اسم کسی که دوسش داریم رو روی کاغذ بنویسیم؟ اون زمان کوچیک بودیم، ولی یا عشقمون خیلی عمیقه که اون زمان هم خودشو نشون داده، یا اون زمان هم یه چیزایی از عشق می‌فهمیدیم. من فکر می‌کنم اون زمان فقط همدیگه رو دوست داشتیم، عشق واقعیمون رو وقتی بزرگ‌تر شدیم حس کردیم. ولی اون جزو بهترین اتفاقای زندگیم بود و اون نامه‌هایی که بعدش تا یه مدت طولانی می‌دادیم.</p>
+
+    <p>از بچگی هر دفعه خونه‌ی ننه‌جان نگاهت می‌کردم، بعدش برام سخت بود که نگاهمو ازت بردارم. فقط چون دور و ورمون آدم بود و نباید زیاد نگاهت می‌کردم. دوست دارم یه‌بار بتونم بدون اینکه کسی منو ببینه کنارت باشم و فقط نگاهت کنم.</p>
+
+    <p>ولی خب این‌جوری هم نبوده که خیلی از هم دور باشیم. چه همه دفعه وقتی نوه‌ها دور هم جمع می‌شدیم، من و دست همو می‌گرفتیم؛ من اون لحظه‌ها رو روی قلبم حک کرده بودم و الان می‌تونم حسش کنم. یا دوبار همو بوسیدیم، که از دفعه دوم خیلی نمی‌گذره، این خودش خیلیه.</p>
+
+    <p>و اینکه بعد این همه مدت که با هم نبودیم، تو اومدی و چراغ سبز دادی که دوباره به هم برگشتیم. اینا بهترین اتفاق زندگیم بودن تا الان. می‌گم «تا الان» چون بعداً قراره اتفاقای بهترم بیفته :)</p>
+
+    <p>اینکه تو این مدت ما درمورد خودمون با هم صحبت کردیم و دیدیم می‌تونیم با هم کنار بیایم. حتماً لازم نیست دو نفر شبیه هم باشن؛ همینکه بخاطر همدیگه کوتاه بیان برای زندگی مشترک کافیه. اینکه غرورشونو کنار بذارن و طرف مقابلشون رو به خودشون ترجیح بدن. لازم نیست حتماً چون من به گیم و فوتبال علاقه دارم، تو هم همین‌جوری باشی؛ یا تو به سریال علاقه داری، منم بتونم یه سریال کامل ببینم. اینا حاشیه‌های زندگیه. مهم اینه بخاطر همدیگه از همه چی بگذریم. همین و تموم.</p>
+
+    <p>من همیشه یا به تو و خاطره‌هایی که باهات داشتم فکر می‌کنم، یا به تو و آینده‌ای که قراره باهات داشته باشم.</p>
+
+    <p>می‌خوام بگم بی‌نهایت دوستت دارم و دلیل خوشحالی و این‌جوری زندگی کردنم هستی. اگه بعضی موقعا می‌بینی خیلی وقته بهت نگفتم دوستت دارم، چون انقدر تو دلم بهت گفتم که فکر می‌کنم تو واقعیت هم گفتم. بعضی وقتا هم دلیلش اینه که تا می‌ام باهات صحبت کنم، حرفای اصلیم یادم می‌ره — اینکه بگم خیلی عاشقتم.</p>
+
+    <p>چقدر روز تولدت قشنگه. کاری به اتفاقایی که قراره بیفته ندارم، بالاخره اتفاق بد هر روز می‌فته. اینکه امروز تولد توئه باعث شده با بقیه روزا فرق کنه و همه چی قشنگ‌تر باشه. امروز می‌خوام ۲۴ ساعتی به تو فکر کنم، شاید فرداشب خوابتو ببینم. و شاید همون خوابو تا ابد ببینم و ازش بیدار نشم. قطعاً نمی‌دونی چقدر دوستت دارم، چون من درون‌گراتر از این حرفام؛ ولی اینکه بگم همیشه حس می‌کنم به هم متصل‌یم، شاید برات قابل درک‌تر بشه.</p>
+
+    <p>تولدت مبارک عزیزم. انشاالله زندگیت پر از چیزایی بشه که می‌خوای. برات آرزو می‌کنم با من ازدواج کنی و خوشبخت بشی 😁 و به هرچی می‌خوای برسی.</p>
+
+    <div class="signature">عاشقِ تو، عارف</div>
+  </div>
+</section>
+
+<!-- ================= ۵. دفتر خاطرات ================= -->
+<section class="diary">
+  <h2 class="section-title">دفتر <span>خاطرات ما</span> 📖</h2>
+  <div class="diary-book" id="diaryBook"></div>
+</section>
+
+<!-- ================= ۶. سورپرایز ================= -->
+<section class="surprise">
+  <h2 class="section-title">یه <span>سورپرایز</span> برات 🎁</h2>
+  <button class="btn" id="surpriseBtn">بزن روی من! 🎉</button>
+  <div class="reasons" id="reasonsBox">
+    <h3>۲۰ دلیل که دوستت دارم — به مناسبت ۲۰ سالگی‌ات</h3>
+    <ol id="reasonsList"></ol>
+  </div>
+</section>
+
+<!-- ================= ۷. موسیقی ================= -->
+<audio id="bgMusic" loop></audio>
+<button class="music-btn" id="musicBtn" title="پخش موسیقی">🎵</button>
+
+<footer>ساخته‌شده با ❤️ فقط برای کیمیا</footer>
+
+<script>
+/* ============================================================
+   ⚙️ CONFIG — فقط این بخش رو ویرایش کن
+   ============================================================ */
+const CONFIG = {
+
+  // ---- آهنگ پس‌زمینه ----
+  music: "song.mp3",
+
+  // ---- ۶ عکس علایق (به ترتیب نمایش) ----
+  interests: [
+    { src: "photo_1_2026-10-17_21-22-26.jpg",       label: "فیلم و سریالای آسیای شرقی 🎬" },
+    { src: "photo_2026-10-17_21-24-58.jpg", label: "سریال مورد علاقت «عشق پنهان» 💜" },
+    { src: "photo_2026-10-17_21-28-33.jpg",   label: "بازیگر مورد علاقت «ژائو لوسی» ⭐" },
+    { src: "photo_2026-10-17_21-44-33.jpg",      label: "ماکارونی با سویا 🍝" },
+    { src: "photo_2026-10-17_21-46-25.jpg",  label: "شیرینیای کاکائویی 🍫" },
+    { src: "photo_2026-10-17_21-47-05.jpg",     label: "فصل تولدت «پاییز» 🍂" }
+  ],
+
+  // ---- ۸ عکس خاطرات (به ترتیب دلخواه) ----
+  // caption اختیاریه؛ اگه نمی‌خوای، خالی بذار: caption: ""
+  memories: [
+    { src: "photo_1_2026-10-17_21-08-14.jpg", caption: "" },
+    { src: "photo_2_2026-10-17_21-08-14.jpg", caption: "" },
+    { src: "photo_3_2026-10-17_21-08-14.jpg", caption: "" },
+    { src: "photo_4_2026-10-17_21-08-14.jpg", caption: "" },
+    { src: "photo_5_2026-10-17_21-08-14.jpg", caption: "" },
+    { src: "photo_6_2026-10-17_21-08-14.jpg", caption: "" },
+    { src: "photo_7_2026-10-17_21-08-14.jpg", caption: "" },
+    { src: "photo_8_2026-10-17_21-08-14.jpg", caption: "" }
+  ],
+
+  // ---- ۲۰ دلیل ----
+  reasons: [
+    "دوستت دارم چون با حضورت حالم بهتر می‌شه.",
+    "دوستت دارم چون لبخندت روزم رو روشن می‌کنه.",
+    "دوستت دارم چون مهربون و دلسوزی.",
+    "دوستت دارم چون منو همون‌جوری که هستم قبول داری.",
+    "دوستت دارم چون حرفم رو خوب گوش می‌دی.",
+    "دوستت دارم چون تو سختی‌ها کنارم می‌مونی.",
+    "دوستت دارم چون صادق و قابل اعتمادی.",
+    "دوستت دارم چون باهات می‌تونم خودم باشم.",
+    "دوستت دارم چون حس امنیت و آرامش می‌دی.",
+    "دوستت دارم چون هوش و فکر کردنت برام جذابه.",
+    "دوستت دارم چون شوخ‌طبعی و باهات می‌خندم.",
+    "دوستت دارم چون به مرزها و احساساتم احترام می‌ذاری.",
+    "دوستت دارم چون تلاش می‌کنی رابطه‌مون رو بهتر کنی.",
+    "دوستت دارم چون منو به رشد و بهتر شدن تشویق می‌کنی.",
+    "دوستت دارم چون لحظه‌های ساده رو برام خاص می‌کنی.",
+    "دوستت دارم چون با یه آغوش یا یه پیام آرومم می‌کنی.",
+    "دوستت دارم چون برای خواسته‌هات و زندگی‌ات انگیزه داری.",
+    "دوستت دارم چون رابطه‌مون بر پایه‌ی گفت‌وگو و اعتماده.",
+    "دوستت دارم چون حتی وقت‌هایی که اختلاف داریم، برامون مهمه که حلش کنیم.",
+    "دوستت دارم چون بودن با تو باعث می‌شه نسخه‌ی بهتر و شادتر خودم باشم."
+  ]
+};
+/* ============================================================
+   پایان CONFIG — از این‌جا به بعد نیازی به تغییر نیست
+   ============================================================ */
+
+// --- علایق ---
+const cardsBox = document.getElementById('interestCards');
+CONFIG.interests.forEach(item => {
+  const div = document.createElement('div');
+  div.className = 'card';
+  div.innerHTML = `<img src="${item.src}" alt="${item.label}" loading="lazy"><div class="label">${item.label}</div>`;
+  cardsBox.appendChild(div);
+});
+
+// --- دفتر خاطرات ---
+const diaryBox = document.getElementById('diaryBook');
+CONFIG.memories.forEach(item => {
+  const div = document.createElement('div');
+  div.className = 'diary-item';
+  div.innerHTML = `<img src="${item.src}" alt="خاطره" loading="lazy">` +
+    (item.caption ? `<div class="cap">${item.caption}</div>` : '');
+  diaryBox.appendChild(div);
+});
+
+// --- ۲۰ دلیل ---
+const reasonsList = document.getElementById('reasonsList');
+CONFIG.reasons.forEach((text, i) => {
+  const li = document.createElement('li');
+  li.textContent = text;
+  li.style.animationDelay = (i * 0.07) + 's';
+  reasonsList.appendChild(li);
+});
+
+// --- دکمه‌ی سورپرایز ---
+const surpriseBtn = document.getElementById('surpriseBtn');
+const reasonsBox = document.getElementById('reasonsBox');
+let opened = false;
+surpriseBtn.addEventListener('click', () => {
+  if (!opened) {
+    reasonsBox.classList.add('open');
+    surpriseBtn.textContent = 'تولدت مبارک عشقم! 💖';
+    startConfetti();
+    opened = true;
+    setTimeout(() => reasonsBox.scrollIntoView({ behavior:'smooth', block:'start' }), 200);
+  } else {
+    startConfetti();
+  }
+});
+
+// --- کانفتی ---
+function startConfetti() {
+  const colors = ['#ff6fa5','#a86bff','#ffd166','#06d6a0','#9ee7ff','#ff9ec4'];
+  for (let i = 0; i < 130; i++) {
+    const c = document.createElement('div');
+    c.className = 'confetti';
+    c.style.left = Math.random() * 100 + 'vw';
+    c.style.background = colors[Math.floor(Math.random() * colors.length)];
+    c.style.width = (6 + Math.random() * 8) + 'px';
+    c.style.height = (6 + Math.random() * 8) + 'px';
+    c.style.animationDuration = (2.2 + Math.random() * 2.2) + 's';
+    c.style.animationDelay = (Math.random() * 0.6) + 's';
+    document.body.appendChild(c);
+    setTimeout(() => c.remove(), 5200);
+  }
+}
+
+// --- موسیقی ---
+const music = document.getElementById('bgMusic');
+const musicBtn = document.getElementById('musicBtn');
+music.src = CONFIG.music;
+
+musicBtn.addEventListener('click', () => {
+  if (music.paused) {
+    music.play().then(() => {
+      musicBtn.textContent = '⏸';
+      musicBtn.classList.add('playing');
+    }).catch(err => {
+      console.warn('پخش موسیقی ممکن نشد:', err);
+      alert('فایل آهنگ پیدا نشد. مطمئن شو اسم فایل توی CONFIG درست وارد شده و کنار index.html هست.');
+    });
+  } else {
+    music.pause();
+    musicBtn.textContent = '🎵';
+    musicBtn.classList.remove('playing');
+  }
+});
+</script>
+</body>
+</html>
